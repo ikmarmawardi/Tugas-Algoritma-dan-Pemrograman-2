@@ -1,0 +1,87 @@
+No. 1) Buat program sederhana yang memiliki prosedur/fungsi tukar nilai bilangan integer menggunakan pointer dan outputnya serta berikan penjelasan program.
+
+#include <stdio.h>
+
+void swap (int *a, int *b); //Deklarasi Fungsi yang akan menukar 2 variabel
+int main() {
+  int x = 25; 		//Deklarasi Variabel Yang Akan Digunakan
+  int y = 100;
+  printf("x adalah %d, y adalah %d\n", x, y);  //Pengeluaran Isi Variabel
+  
+  swap(&x, &y); //Pemanggilan Fungsi Penukaran
+  printf("x adalah %d, y adalah %d\n", x, y); //Pengeluaran Isi Variabel Setelah Pertukaran
+  }
+void swap (int *a, int *b) {
+	/*Disini Kita Mendefinisikan Fungsi Yang Mengambil 2 Integer
+	 Sebagai Parameter*/
+  int temp; //Deklarasi Variabel Penympanan Sementara
+  temp = *a;
+  *a = *b;
+  *b = temp;
+  }
+
+
+No. 2) Buatlah suatu program untuk menjumlahkan bilangan bulat yang dimasukkan melalui keyboard, batas awal (i) bertipe integer, batas akhir(n) bertipe integer dan jumlah (sum) bertipe integer untuk menyimpan total bilangan bulat menggunakan pointer (berikan penjelasan program).
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *ptr;	//Deklarasi Pointer
+	int n;   	//Batas Array
+	int i;		//Variabel Looping
+	int sum;	//Variabel Penyimpan Hasil
+
+	printf("Masukkan Batas Array : ");
+	scanf("%d",&n);
+
+	//Deklarasi Memori Dinamis
+	ptr=(int*)malloc(n*sizeof(int));
+
+	//Input Elemen Array
+	for(i=0;i<n;i++)
+	{
+		printf("Masukkan Elemen %02d: ",i+1);
+		scanf("%d",(ptr+i));
+	}
+
+	//Output Elemen Array
+	printf("\nElemen Array Yang Dimasukkan:\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\n",*(ptr+i));
+	}
+	
+	//Kalkulasi Nilai Hasil
+	sum=0;	//Mengosongkan Nilai Sum
+	for(i=0;i<n;i++)
+	{
+		sum+=*(ptr+i);
+	}
+	printf("Hasil Akhir Penjumlahan Array: %d\n",sum);
+}
+
+
+No. 3) Buat program untuk menyusun nomor dus air 2,4,6,…18 menggunakan pointer secara otomatis menyimpan nomor (tanpa masukan keyboard) ke dalam kontainer yang memuat ukuran 3 x 3, setiap dus akan diberi nomor sebanyak jumlah dus sesuai ukuran kontainer (berikan penjelasan program).
+
+#include <stdio.h>
+#include <iostream>
+int main()
+{
+    int f=0; //Deklarasi Variabel
+    int g=0;
+    int h=1;
+    int a[3][3] = {{2,4,6}, {8,10,12}, {14,16,18}}; //Deklarasi Dan Pengisian Array
+    int *p = &a[f][g]; //Deklarasi Pointer
+    //Looping Untuk Output Array
+   	for (f = 0; f < 3; f++){
+    	for(g=0;g<3;g++){
+    		printf("Isi Dos Ke %d : ",h); //Output Dos
+    		h++;
+       		printf("%d",*p); //Output Pointer
+       		printf("\n");
+       		p++; 
+    	}
+	}
+}
