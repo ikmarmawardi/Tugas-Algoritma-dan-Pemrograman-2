@@ -1,0 +1,169 @@
+No. 2) Buat program sederhana yang mengandung struct to pointer(program upload dalam github).
+
+#include <iostream>
+using namespace std;
+struct mhs {
+	char nama [20];
+	long long int stb;
+};
+int main (){
+struct mhs data {"Ikmar",13020190084};
+struct mhs *ptr;
+ptr = &data;
+cout<< data.nama<<" "<< data.stb<<endl;
+cout<< ptr->nama<<" "<< ptr->stb;
+return 0;
+}
+
+
+No. 4) Buat program sederhana yang menunjukkan passing by value pada struktur sebagai argumen dari fungsi.
+
+#include<iostream>
+using namespace std;
+
+struct mhs {
+	char nama [20];
+	int stb;
+	float nilai;
+};
+void tampilkan(struct mhs st){
+	cout<<"Nama : "<<st.nama<<endl;
+	cout<<"Stambuk : "<<st.stb<<endl;
+	cout<<"Nilai : "<<st.nilai<<endl;
+}
+int main (){
+	mhs data_mahasiswa;
+	cout<<"Nama : "; cin>>data_mahasiswa.nama;
+		cout<<"Stambuk : "; cin>>data_mahasiswa.stb;
+	cout<<"Nilai : "; cin>>data_mahasiswa.nilai;
+	cout<<endl;
+	tampilkan (data_mahasiswa);
+	return 0;
+}
+
+
+No. 5) Buat program sederhana yang menunjukkan passing by reference pada struktur sebagai argumen dari fungsi.
+
+#include<iostream>
+using namespace std;
+
+struct mhs {
+	char nama [20];
+	int stb;
+	float nilai;
+};
+void tampilkan(struct mhs *st){
+	cout<<"Nama : "<<st->nama<<endl;
+	cout<<"Stambuk : "<<st->stb<<endl;
+	cout<<"Nilai : "<<st->nilai<<endl;
+}
+int main (){
+	mhs data_mahasiswa;
+	cout<<"Nama : "; cin>>data_mahasiswa.nama;
+		cout<<"Stambuk : "; cin>>data_mahasiswa.stb;
+	cout<<"Nilai : "; cin>>data_mahasiswa.nilai;
+	cout<<endl;
+	tampilkan (&data_mahasiswa);
+	return 0;
+}
+
+
+No. 6) Buat program yang mengandung array dari struct.
+
+#include<iostream>
+using namespace std;
+
+struct mhs {
+●	char nama [20];
+	int stb;
+	float nilai;
+};
+
+int main (){
+	mhs data_mahasiswa[2];
+	for (int i=0;i<2;i++){
+	cout<<"Data Mahasiswa "<<i+1;
+	cout<<"\nNama : "; cin>>data_mahasiswa[i].nama;
+		cout<<"Stambuk : "; cin>>data_mahasiswa[i].stb;
+	cout<<"Nilai : "; cin>>data_mahasiswa[i].nilai;
+}
+	cout<<endl;
+	for (int j=0; j<2; j++){
+	cout<<"Data Mahasiswa"<<j+1;
+	cout<<"\nNama : "<<data_mahasiswa[j].nama<<endl;
+	cout<<"Stambuk : "<<data_mahasiswa[j].stb<<endl;
+	cout<<"Nilai : "<<data_mahasiswa[j].nilai<<endl;
+}
+	return 0;
+}
+
+
+No. 8) Buat program sederhana yang menggunakan union dalam pemrograman c++.
+
+#include <iostream>
+using namespace std;
+union mhs {
+	int kelas;
+	long long int stb;
+};
+int main (){
+union mhs data;
+data.kelas = 2;
+data.stb = 13020190096;
+cout<<"Kelas : "<<data.kelas<<endl<<"Stambuk : "<<data.stb;
+return 0;
+}
+
+
+No. 11) Buat program sederhana yang menggunakan typedef dalam pemrograman c++.
+ 
+#include<iostream>
+using namespace std;
+
+typedef int bil_bulat;
+typedef string kata;
+
+int main () {
+bil_bulat stb;
+	kata nama;
+	cin>>stb>>nama;
+	cout<<"Stambuk : "<<stb<<endl<<"Nama : "<<nama;
+return 0;
+
+}
+
+
+No. 12) Buat program sederhana yang menggunakan enum dan bit-field dalam pemrograman c++.
+
+Bit-field
+
+#include<iostream>
+using namespace std;
+
+struct bit_data {
+unsigned b0 : 1; unsigned b1 : 1;
+};
+
+int main (){
+union ubyte{unsigned char byte; bit_data bit;};
+ubyte ascii;
+int nilai;
+cout<<"Masukkan nilai ascii : ";
+cin>>nilai;
+ascii.byte=nilai;
+cout<<ascii.bit.b1<<" "<<ascii.bit.b0<<endl;
+return 0;
+}
+
+Enum
+
+#include<fstream>
+using namespace std;
+
+int main (){
+ofstream myfile;
+myfile.open ("alpro.txt", ios::app);
+myfile<<"Saya belajar membuat file";
+myfile.close ();
+return 0;
+}
