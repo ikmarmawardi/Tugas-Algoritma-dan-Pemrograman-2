@@ -1,0 +1,72 @@
+No. 1) Buat program sederhana yang menggunakan variabel pointer to pointer dan berilah penjelasan.
+
+#include <stdio.h>
+
+int main () {
+   int  var = 2304;
+   int  *ptr;
+   int  **pptr;
+
+   // pointer pertama mengambil lokasi variabel
+   ptr = &var;
+
+   // pointer kedua mengambil lokasi pointer pertama
+   pptr = &ptr;
+
+   // output isi variabel dan pointer
+   printf("Nilai dalam var : %d\n",var);
+   printf("Nilai Yang Tersimpan Dalam *ptr : %d\n",*ptr);
+   printf("Nilai Yang Tersimpan Dalam **pptr : %d\n",**pptr);
+}
+
+
+No. 2) Bagaimana cara mengakses pointer? tunjukkan dengan program sederhana!
+
+#include <iostream> 
+using namespace std; 
+  
+int main() { 
+    // Deklarasi Variabel
+    int Var = 2304; 
+    // Deklarasi Pointer Yang Menunjuk Ke Alamat Variabel 
+    int *ptr = &Var;  
+    // Output Nilai Yang Tersimpan Di Dalam Variabel Melalui Pointer
+    cout << "Nilai Di Dalam Var = "<< *ptr << endl; 
+    // Output Lokasi Memori Variabel Yang Tersimpan Dalam Pointer
+    cout << "Lokasi Memori Var = " <<  ptr << endl; 
+}
+
+
+No. 3) Tuliskan program dan output program pointer ke fungsi dan berilah penjelasan
+
+#include <stdio.h>
+
+void swap (int *a, int *b); //Deklarasi Fungsi yang akan menukar 2 variabel
+int main() {
+  int x = 25; 		//Deklarasi Variabel Yang Akan Digunakan
+  int y = 100;
+  printf("x adalah %d, y adalah %d\n", x, y);  //Pengeluaran Isi Variabel
+  
+  swap(&x, &y); //Pemanggilan Fungsi Penukaran
+  printf("x adalah %d, y adalah %d\n", x, y); //Pengeluaran Isi Variabel Setelah Pertukaran
+  }
+void swap (int *a, int *b) {
+	/*Disini Kita Mendefinisikan Fungsi Yang Mengambil 2 Integer
+	 Sebagai Parameter*/
+  int temp; //Deklarasi Variabel Penympanan Sementara
+  temp = *a;
+  *a = *b;
+  *b = temp;
+  }
+
+
+No. 4) Tuliskan program dan outputnya dari program yang menggunakan pointer dengan tipedata void serta beri penjelasan.
+
+#include<stdio.h> 
+int main() 
+{ 
+    int a = 10; //Deklarasi Variabel
+    void *ptr = &a; //Deklarasi Pointer Bertipe Void
+    printf("%d", *(int *)ptr); //Output Pointer
+
+}
