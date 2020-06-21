@@ -1,0 +1,42 @@
+No. 4) Buatlah Program untuk menjumlahkan bilangan bulat yang dimasukkan melalui keyboard, batas awal (i) bertipe integer, batas akhir(n) bertipe integer dan jumlah (sum) bertipe integer untuk menyimpan total bilangan bulat.
+	ILUSTRASI : 5
+	2 3 10 7 3
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	int x,sum,a;
+	int X[x];
+	cout<<"Jumlah Bilangan = ";cin>>x;
+	for(a = 0;a<x;a++){
+		cin>>X[a];
+	}
+	for(a = 0;a<x;a++){
+		sum = sum + X[a];
+	}
+	cout<<"Hasil Penjumlahan Bilangan = "<<sum;
+}
+
+No. 8) Buat Program untuk menyusun nomor dus air 2,4,6,…18 (gunakan looping) ke dalam rang kontainer yang memuat ukuran 3 x 3, setiap dus akan diberi nomor sebanyak jumlah dus dan ukuran container.
+
+#include <stdio.h>
+
+int main()
+{
+    int i=0; //Deklarasi Variabel
+    int j=0;
+    int x=1;
+    int a[3][3] = {{2,4,6}, {8,10,12}, {14,16,18}}; //Deklarasi Dan Pengisian Array
+    int *p = &a[i][j]; //Deklarasi Pointer
+    //Looping Untuk Output Array
+   	for (i = 0; i < 3; i++){
+    	for(j=0;j<3;j++){
+    		printf("Isi Dos Ke %d : ",x); //Output Dos
+    		x++;
+       		printf("%d",*p); //Output Pointer
+       		printf("\n");
+       		p++; 
+    	}
+	}
+}
