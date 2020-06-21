@@ -1,0 +1,41 @@
+No. 5) Buat program sederhana untuk membuka file ekstensi (*.txt) yang berisi "Saya belajar membuat file".
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+
+    ofstream myfile;
+    myfile.open("13020190084IkmarMawardi.txt",ios::app);
+    myfile << "saya belajar membuat file";
+    myfile.close();
+
+return 0;
+
+}
+
+
+No. 6) Buat program sederhana untuk membaca file ekstensi (*txt)yang telah tersimpan dan berisi "saya membuka file".
+
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	string line;
+	ifstream myfile("13020190084IkmarMawardi.txt"); 
+
+while (getline(myfile,line)){
+	cout << line << '\n';
+}
+
+myfile.close();
+
+return 0;
+	
+}
